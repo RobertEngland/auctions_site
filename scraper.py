@@ -21,9 +21,9 @@ matchedlinks=root.cssselect("li p a")
 # We're calling it li because it relates to the tag we've grabbed it from
 for li in matchedlinks:
   #store the text elements of li in a new variable showing just this'listtext'
-  listtest=li.text_content()
+  listtext=li.text_content()
   # print that
-  print(listext)
+  print(listtext)
   
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
