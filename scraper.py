@@ -1,3 +1,4 @@
+# Auction scraper - looking for info from an auctions site to identify more into on govt sell offs of property to plug budget
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 import scraperwiki
@@ -9,6 +10,7 @@ html = scraperwiki.scrape("https://www.sdlauctions.co.uk/property-list/")
 print(html)
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
+# inspecting the all the info in the <a tag within the <p> and <li> tags (P and LI are parents of A)
 root.cssselect("li p a")
 #
 # # Write out to the sqlite database using scraperwiki library
