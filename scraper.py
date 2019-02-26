@@ -12,7 +12,9 @@ print(html)
 root = lxml.html.fromstring(html)
 # inspecting the all the info in the <a tag within the <p> and <li> tags (P and LI are parents of A)
 root.cssselect("li p a")
-#
+# then store the matched links in 'matchedlinks'
+matchedlinks = root.cssselect("li p a")
+print(matchedlinks)
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
