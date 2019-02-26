@@ -19,9 +19,13 @@ matchedlinks=root.cssselect("li p a")
 # print(matchedlinks)
 # create a dictionary called record
 record = {}
+# Set a counter
+counter = 0
 # It's time to loop through the confusing codes from the page <Element a at 0x7f3fb1c536d8> calling each one li
 # We're calling it li because it relates to the tag we've grabbed it from
 for li in matchedlinks:
+  #increase counter by 1
+  counter= counter+1
   #store the text elements of li in a new variable called 'listtext'
   listtext=li.text_content()
   # print that
