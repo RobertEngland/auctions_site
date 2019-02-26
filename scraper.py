@@ -32,6 +32,8 @@ for li in matchedlinks:
   print(listtext).encode('utf-8')
   # store it in the 'record' dictionary under the key 'address'
   record["address"] = listtext
+  #store the link in the data, the html reference or href
+  record['link'] = li.attrib['href']
   # save the text that's been stored in the dictionary 'record' and save it to a table
   scraperwiki.sqlite.save(['address'],record)
 # # Write out to the sqlite database using scraperwiki library
