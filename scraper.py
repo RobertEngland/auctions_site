@@ -25,7 +25,7 @@ for li in matchedlinks:
   #store the text elements of li in a new variable called 'listtext'
   listtext=li.text_content()
   # print that
-  print(listtext)
+  print(listtext).encode('utf-8')
   # store it in the 'record' dictionary under the key 'address'
   record["address"] = listtext
   # save the text that's been stored in the dictionary 'record' and save it to a table
