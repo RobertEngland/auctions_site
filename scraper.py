@@ -17,14 +17,19 @@ root.cssselect("li p a")
 matchedlinks=root.cssselect("li p a")
 ##commented out the print link so running the page doesn't take ages!
 # print(matchedlinks)
+# create a dictionary called record
+record = {}
 # It's time to loop through the confusing codes from the page <Element a at 0x7f3fb1c536d8> calling each one li
 # We're calling it li because it relates to the tag we've grabbed it from
 for li in matchedlinks:
-  #store the text elements of li in a new variable showing just this'listtext'
+  #store the text elements of li in a new variable called 'listtext'
   listtext=li.text_content()
   # print that
   print(listtext)
-  
+  # store it in the 'record' dictionary under the key 'address'
+  record["address"] = listtext
+  # save the text that's been stored in the dictionary 'record' and save it to a table
+  scraperwiki.sqlite.save(['address'],record)
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
